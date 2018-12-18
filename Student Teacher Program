@@ -1,0 +1,124 @@
+//Program Student
+by: Edgar Dimas Isaadrazak [1606908520]
+    Refanka Nabil Assalam [1606870944]
+
+
+#include <stdio.h>
+#include<stdlib.h>
+#define MAX_LEN 200
+#include <time.h>
+#include "gfxEngine.h"
+#include"struct.h"
+#include"insprint.h"
+#include"Pertanyaan.h"
+#include<time.h>
+#include<string.h>
+#include<strings.h>
+#include"functions.h"
+
+#define bzero(b,len) (memset((b), '\0', (len)), (void) 0)
+
+
+
+int a,b,c,d,f;
+	int ans1,ans2,ans3,ans4,ans5,ans6,ans7,ans8,ans9,ans10;
+	
+        
+int main(){
+	FILE *fp = NULL;
+
+    fp = fopen("jawaban.txt" ,"a");
+    
+	printf("===============================================\n\nWelcome, Student!\n\n");
+	printf("===============================================\n\n");
+	system("pause");
+	system("cls");
+	printf("Please enter your student number: ");
+	int snumber;
+	scanf("%d",&snumber);
+	system("pause");
+	system("cls");
+	int dd = 0;
+	while(dd == 0){
+	system("cls");
+	printf("\n\nSilahkan pilih Soal untuk dijawab!\n\n");
+	printf("[1]. Pertanyaan mengenai Segi lima\t[6]. Pertanyaan mengenai angka ke tiga\n");
+	printf("[2]. Pertanyaan mengenai transpose\t[7]. Pertanyaan mengenai kelereng \n");
+	printf("[3]. Pertanyaan mengenai fungsi array\t[8]. Pertanyaan mengenai jumblah sisi\n"); 
+	printf("[4]. Pertanyaan mengenai Segi lima\t[9]. Pertanyaan mengenai aritmatika\n");
+	printf("[5]. Pertanyaan mengenai nilai Maks\t[10]. Pertanyaan mengenai cosinus\n");
+	printf("[11]. Lihat hasil jawaban\n");
+	printf("[12]. Keluar\n\n");
+	
+	printf("pilihan anda: ");
+	int p1;
+	scanf("%d",&p1);
+
+	if(p1 == 1){
+		Pertanyaan1();
+		printf("jawaban anda: ");
+		scanf("%d",&ans1);
+		
+	}
+	else if(p1 == 2){
+		Pertanyaan2();
+		printf("Jawaban anda: ");
+		scanf("%d",&ans2);
+	}
+		else if(p1 == 3){
+		Pertanyaan3();
+		printf("Jawaban anda: ");
+		scanf("%d",&ans3);
+	}
+		else if(p1 == 4){
+	    Pertanyaan4();
+		printf("Jawaban anda: ");
+		scanf("%d",&ans4);
+	}
+		else if(p1 == 5){
+	    Pertanyaan5();
+		printf("Jawaban anda: ");
+		scanf("%d",&ans5);
+	}
+		else if(p1 == 6){
+		Pertanyaan6();
+		printf("Jawaban anda: ");
+		scanf("%d",&ans6);
+	}
+		else if(p1 == 7){
+		int ans7;
+		Pertanyaan7();
+		printf("Jawaban anda: ");
+		scanf("%d",&ans7);
+	}
+		else if(p1 == 8){
+		Pertanyaan8();
+		printf("Jawaban anda: ");
+		scanf("%d",&ans8);
+	}
+		else if(p1 == 9){
+		Pertanyaan9();
+		printf("Jawaban anda: ");
+		scanf("%d",&ans9);
+	}
+		else if(p1 == 10){
+		Pertanyaan10();
+		printf("Jawaban anda: ");
+		scanf("%d",&ans10);
+	}
+	
+	if(p1 == 11){
+		printf(",%d,%d,%d,%d,%d,%d,%d,%d,%d,%d.",ans1,ans2,ans3,ans4,ans5,ans6,ans7,ans8,ans9,ans10);
+		
+	}
+	if (p1 == 12){
+		printf("Terima kasih! ");
+		fprintf(fp,"%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d.\n",snumber,ans1,ans2,ans3,ans4,ans5,ans6,ans7,ans8,ans9,ans10); // Print the code
+		return 0;
+	}
+	printf("\n\nJawaban di simpan!\n\n ");
+	system("pause");
+}
+	
+	
+}
