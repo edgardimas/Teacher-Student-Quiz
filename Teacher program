@@ -1,4 +1,9 @@
-//this program can read .txt file and then put the answer in the struct
+/* Program Teacher 
+ by : Edgar Dimas Isaadrazak(1606908520)
+	  Refanka Nabil Assalam(1606870944)		
+Link github: https://github.com/edgardimas/Teacher-Student-Quiz/blob/master/Teacher%20program 
+ */
+
 
 #include <stdio.h>
 #include<stdlib.h>
@@ -14,12 +19,18 @@
 #include"functions.h"
 #include"Search.h"
 #define bzero(b,len) (memset((b), '\0', (len)), (void) 0)
+//Program ini Menggunakan header atas tujuan mempercantik program.
+//Saya menggunakan bahasa inggris dan bahasa indonesia.
+//Dalam program ini, file .txt akan dibaca beberapa nomor
+// nomor- nomor tersebut akan di de-enskripsikan sehingga dapat dibaca.
+
 
 int main(){
-		FILE *fs;
-		FILE *fp = NULL; 
-		fs = fopen("jawaban.txt", "r");
-		fp = fopen("jawaban.txt" ,"a");
+		FILE *f1;// Initialitation so that this program could open a file.
+		FILE *f2;
+		FILE *f3;
+		//fs = fopen("jawaban.txt", "r");
+		//fp = fopen("jawaban.txt" ,"a");
     
 	system("cls");
 	printf("============================\n");
@@ -28,11 +39,16 @@ int main(){
 	printf("\n\n");
 	printf("Welcome to my program!");
 	printf("\nSelect Options!\n");
-	printf("1.Insert Answer \n2.View Student List\n3.Find Student\n4.Exit\n\n");
+	printf("1.Insert Answer \n2.View Student List\n3.Find Student\n4.Print Output in .txt\n5.Exit\n");
 	int choice1;
+
 	printf("\n\nChoice: ");
 	scanf("%d",&choice1);
-	if(choice1==1){
+	
+	
+	
+	
+	if(choice1==1){// The user (A.K.A the teacher decide) to input datas to struct
 	
 		
 	char ch, buffer[32];
@@ -43,37 +59,60 @@ int main(){
 	int arr2[11];
 	int pilih;
 
-
+	
+int p;
+	int correct;
+ 	int snumber;
+ 	char name1[20];
+ 	
+for (p = 0; p<3 ; p++){
+	
+	printf(" p adalah %d \n",p);
+	
+ 	//program secara automatis akan mengechek 3 file secara beruntun
+			f1 = fopen("jawabanRefan.txt", "r");
+		
+	
+			f2 = fopen("jawabanEdgar.txt", "r");
 	
 
-	while(1){
+			f3 = fopen("jawabanAndrew.txt", "r");
 	
-		ch = fgetc(fs);
-		if(ch == EOF){
+	
+	
+	
+	while(1){ //the program would not stop reading the x,x,x,... sequence until NULL
+	    
+	    if (p==0){
+	    	ch = fgetc(f2);
+		}
+		else if(p==1){
+			ch = fgetc(f1);
+		}
+		else if(p==2){
+			ch = fgetc(f3);
+			
+		}
+		        // take a character from the .txt
+		if(ch == EOF){// EOF = NULL then break
 			break;
 		}
-		else if(ch == ','){
-			arr[j] = atoi(buffer);
-			j++;
+		else if(ch == ','){ // ketika koma maka program akan: 
+			arr[j] = atoi(buffer); //convert a string into an integer
+			j++; // menambah j supaya pada pembacaan selanjutnya dapat 
 			bzero(buffer, 32);
 			i = 0;
 			continue;
 		}
-		else if(ch == '.'){
-			break;
-		}
+	
 		else{
 			buffer[i] = ch;
 			i++;
 		}
-		
-	}
-
- 	int correct;
- 	int snumber;
- 	char name1[20];
- 	
-	if(arr[0]==123){
+}
+	
+	
+	if(arr[0]==123){ // The program could determine who is being checked.
 		printf("Welcome Edgar! ");
 		snumber = 123;
 	strcpy (name1,"Edgar");
@@ -83,9 +122,9 @@ int main(){
 		snumber = 321;
 		strcpy (name1,"Refan");
 	}
-	else if(arr[0]==231){
+	else if(arr[0]==213){
 		printf("Welcome Andrew! ");
-		snumber = 231;
+		snumber = 213;
 		strcpy(name1,"Andrew");
 	}
 	
@@ -104,17 +143,24 @@ int main(){
 			printf("jawaban %d salah\n",i);
 		}
 		
-}
+} 
+	j = 0;
+	i = 0;
+
+	
 		insert(correct,name1,snumber);
+	
 		system("pause");
 		system("cls");
+		correct = 0;
+    } // End of while for
+    
+    	return main();
 		
-		return main();
-		
+	} // End if choice 1
 	
-}
 
-else if(choice1==2){
+  else if(choice1==2){
 		system("cls");
 		printf("Player List: \n");
 		
@@ -134,10 +180,36 @@ else if(choice1==2){
 			system("pause");
 			return main();
 	}
-	else if(choice1==4){
-		Exit();
-	}
-	else {
+	
+	else if(choice1 == 4){//user memutuskan untuk memprint hasil dari struct
+		system("CLS");
+
+    	FILE *output = fopen("Hasil Data.txt", "w"); // open the file to write	
+        p *ptr = head;
+		printf("\n\n");
+		while (ptr!=NULL){// sama seperti printList() hanya saja ditambah sedikit
+	
+		fprintf(output,"Nama: %s |",ptr->name);
+		fprintf(output, "S. Number: %d |",ptr->npm);
+		fprintf(output, "score %d |",ptr->score);
+		fprintf(output,"\n");
+		ptr = ptr->next;
+		printf("\n\nHasil sudah di print!\n\n");
+		system("pause");
 		return main();
 	}
+	
+    }
+	
+
+	else if(choice1==5){
+		Exit();
+	}
+
+	else {
+		return main();
 }
+
+
+
+}// end of main
