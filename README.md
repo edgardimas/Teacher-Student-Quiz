@@ -8,4 +8,9 @@ Student Program -> produces .txt file, contains numbers that contains their stud
 
 Teacher Program -> Read .txt file and then put the code inside into a struct and then put their scores in the .txt file.
 
+in this program there are only 3 students:
+Edgar, Student number = 123.
+Refan, Student number = 321.
+Andre, Student number = 213.
+
 However, this program still have weakness, such as the student could just copy paste their friend's answer. to anticipate that, in the future i will add more feature such as encrypted code, so that a student could only answer through the progtam given by the teacher.
