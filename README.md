@@ -1,4 +1,4 @@
-# pitut
+# Teacher-Student Quiz Program
 A program that Read and Write .txt file.
 
 Contains struct that contains student name,number and score.
