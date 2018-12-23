@@ -1,4 +1,7 @@
-/* Program Teacher 
+/* 
+No. Kelompok: 1
+Judul: Teacher-Student Quiz Program
+Program Teacher 
  by : Edgar Dimas Isaadrazak(1606908520)
 	  Refanka Nabil Assalam(1606870944)		
 Link github: https://github.com/edgardimas/Teacher-Student-Quiz/blob/master/Teacher%20program 
@@ -133,7 +136,7 @@ for (p = 0; p<3 ; p++){
 	for(i = 1; i < j; i++){
 		printf("Jawaban [%d]: %d\n", i, arr[i]);
 }
-		int jawaban[11]={0,1,1,2,13,1,5,30,8,16,0};
+		int jawaban[11]={0,1,1,2,2,1,5,3,8,1,0};
 	for(i = 1; i < j; i++){
 		if(arr[i]==jawaban[i]){
 			printf("jawaban %d benar\n",i);
@@ -187,6 +190,7 @@ for (p = 0; p<3 ; p++){
     	FILE *output = fopen("Hasil Data.txt", "w"); // open the file to write	
         p *ptr = head;
 		printf("\n\n");
+		
 		while (ptr!=NULL){// sama seperti printList() hanya saja ditambah sedikit
 	
 		fprintf(output,"Nama: %s |",ptr->name);
@@ -194,11 +198,12 @@ for (p = 0; p<3 ; p++){
 		fprintf(output, "score %d |",ptr->score);
 		fprintf(output,"\n");
 		ptr = ptr->next;
-		printf("\n\nHasil sudah di print!\n\n");
-		system("pause");
-		return main();
+	    
+		
 	}
-	
+	printf("\n\nHasil sudah di print!\n\n");
+	system("pause");
+		return main();
     }
 	
 
