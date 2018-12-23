@@ -13,4 +13,11 @@ Edgar, Student number = 123.
 Refan, Student number = 321.
 Andre, Student number = 213.
 
-However, this program still have weakness, such as the student could just copy paste their friend's answer. to anticipate that, in the future i will add more feature such as encrypted code, so that a student could only answer through the progtam given by the teacher.
+Collabortive Assigment Task Division:
+
+Student by Edgar (+ Encrypted answer by refan).
+Decrypt by Refan.
+Teacher by Edgar.
+
+
+However, this program still have weakness, such as the student could just copy paste their friend's answer. to anticipate that, in the future i will add more feature such as secret code on the .txt file, so that a student could only answer through the progtam given by the teacher.
